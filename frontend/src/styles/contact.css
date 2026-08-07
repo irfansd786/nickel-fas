@@ -1,0 +1,377 @@
+/* ============================================================
+   PREMIUM CONTACT US PAGE STYLES
+   ============================================================ */
+
+.contact-page-main {
+  background-color: #FFFFFF;
+  min-height: 80vh;
+  padding: 3rem 0 5rem 0;
+}
+
+.contact-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+}
+
+/* HERO / HEADER */
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-title {
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #111111;
+  margin: 0 0 0.75rem 0;
+  line-height: 1;
+}
+
+.contact-subtitle {
+  font-size: 1.05rem;
+  color: #666666;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* MAIN TWO-COLUMN GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+/* LEFT COLUMN — STORE DETAILS */
+.store-details-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-subheading {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 2rem;
+}
+
+.store-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.store-detail-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #F6F6F6;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.store-detail-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.store-detail-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.store-detail-link {
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.store-detail-link:hover {
+  color: #C6A15B;
+}
+
+/* VISIT OUR STORE BUTTON */
+.visit-store-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2.25rem;
+  background-color: #111111;
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 1rem;
+  align-self: flex-start;
+  transition: all 0.25s ease;
+}
+
+.visit-store-btn:hover {
+  background-color: #222222;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-arrow-icon {
+  transition: transform 0.25s ease;
+}
+
+.visit-store-btn:hover .btn-arrow-icon {
+  transform: translateY(3px);
+}
+
+/* RIGHT COLUMN — SEND MESSAGE FORM */
+.send-message-section {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.form-supporting-text {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 1.25rem;
+  font-size: 0.9rem;
+  border: 1px solid #DCDCDC;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  color: #111111;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #111111;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 130px;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  border: 1px solid #DCDCDC;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  color: #111111;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.form-textarea:focus {
+  border-color: #111111;
+}
+
+.send-message-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.15rem 2.5rem;
+  background-color: #111111;
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 0.5rem;
+}
+
+.send-message-btn:hover {
+  background-color: #222222;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.send-message-btn:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* SUCCESS TOAST */
+.form-success-box {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background-color: #F8FBF9;
+  border: 1px solid #D1E7DD;
+  border-radius: 4px;
+}
+
+.form-success-box h4 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #198754;
+  text-transform: uppercase;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.form-success-box p {
+  color: #555555;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* BRIGHT INTERACTIVE MAP SECTION */
+.interactive-map-wrapper {
+  margin-top: 2.5rem;
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E5E5E5;
+  background-color: #F5F5F5;
+}
+
+.bright-map-iframe {
+  width: 100%;
+  height: 480px;
+  border: 0;
+  filter: contrast(1.02) brightness(1.03);
+}
+
+/* FLOATING STORE LOCATION CARD */
+.floating-location-card {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem 1.75rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid #E5E5E5;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.location-pin-icon {
+  color: #E63946;
+  flex-shrink: 0;
+  animation: pulsePin 2s infinite;
+}
+
+@keyframes pulsePin {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(230, 57, 70, 0.4));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(230, 57, 70, 0.7));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(230, 57, 70, 0.4));
+  }
+}
+
+.location-card-title {
+  font-size: 0.875rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #111111;
+  margin: 0 0 0.2rem 0;
+}
+
+.location-card-address {
+  font-size: 0.775rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .send-message-section {
+    padding: 2rem;
+  }
+
+  .bright-map-iframe {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 0 16px;
+  }
+
+  .visit-store-btn,
+  .send-message-btn {
+    width: 100%;
+  }
+
+  .floating-location-card {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 1rem;
+  }
+
+  .bright-map-iframe {
+    height: 350px;
+  }
+}

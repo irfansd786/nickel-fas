@@ -1,0 +1,467 @@
+/* ============================================================
+   BUTTON COMPONENTS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-primary);
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1.1rem 2.2rem;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+}
+
+.btn-primary:hover {
+  background-color: #222222;
+  border-color: #222222;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  background-color: transparent;
+  color: var(--color-black);
+  padding: 0.5rem 0;
+  border-radius: 0;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-black);
+  transition: transform var(--transition-normal);
+  transform-origin: right;
+}
+
+.btn-text:hover::after {
+  transform: scaleX(0);
+}
+
+.btn-icon-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-icon-arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   SECTION TITLE COMPONENT
+   ============================================================ */
+.section-title-wrapper {
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.section-title-left {
+  max-width: 650px;
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section-main-heading {
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.section-description {
+  margin-top: 0.75rem;
+  color: var(--color-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.section-action-link {
+  font-size: 0.825rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid var(--color-black);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.section-action-link:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* Center Aligned Variation */
+.section-title-wrapper.center {
+  text-align: center;
+  justify-content: center;
+}
+
+.section-title-wrapper.center .section-title-left {
+  margin: 0 auto;
+}
+
+/* ============================================================
+   PRODUCT CARD COMPONENT
+   ============================================================ */
+/* ============================================================
+   PRODUCT CARD COMPONENT
+   ============================================================ */
+.product-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card-image-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-color: #F5F5F5;
+  overflow: hidden;
+  width: 100%;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-card-image {
+  transform: scale(1.04);
+}
+
+/* Product Card Badges */
+.product-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+}
+
+/* Wishlist Button */
+.product-wishlist-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.product-wishlist-btn:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transform: scale(1.08);
+}
+
+.product-wishlist-btn.active {
+  background-color: var(--color-black);
+  color: #E63946;
+}
+
+/* Quick Add Button Overlay */
+.product-quick-add {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.product-card:hover .product-quick-add {
+  transform: translateY(0);
+}
+
+.btn-quick-add {
+  width: 100%;
+  padding: 0.65rem;
+  font-size: 0.725rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+}
+
+/* Product Info */
+.product-card-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.5rem;
+  transition: color var(--transition-fast);
+}
+
+.product-card:hover .product-title {
+  color: var(--color-gold);
+}
+
+.product-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777777;
+  margin-bottom: 0.4rem;
+}
+
+.product-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+  min-height: 1.1rem;
+}
+
+.product-rating-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #777777;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111111;
+}
+
+.product-old-price {
+  font-size: 0.825rem;
+  color: #888888;
+  text-decoration: line-through;
+}
+
+.product-discount {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+/* GLOWING FOOTER SOCIAL ICONS */
+.glowing-social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #161616;
+  border: 1px solid #282828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glowing-social-icon:hover {
+  background-color: #0A0A0A;
+  color: #C6A15B;
+  border-color: #C6A15B;
+  box-shadow: 0 0 18px rgba(198, 161, 91, 0.7);
+  transform: translateY(-4px);
+}
+
+
+/* ============================================================
+   CATEGORY CARD COMPONENT
+   ============================================================ */
+.category-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  display: block;
+  background-color: var(--color-dark);
+}
+
+.category-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.category-card:hover .category-card-image {
+  transform: scale(1.08);
+}
+
+.category-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.25rem;
+  transition: background var(--transition-normal);
+}
+
+.category-card:hover .category-card-overlay {
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.3) 70%, transparent 100%);
+}
+
+.category-card-sublabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.category-card-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.category-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transition: color var(--transition-fast);
+}
+
+.category-card:hover .category-card-cta {
+  color: var(--color-gold);
+}
+
+.category-card-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.category-card:hover .category-card-arrow {
+  transform: translateX(6px);
+}
+
+.view-all-category-link:hover .view-all-arrow {
+  transform: translateX(4px);
+}
+
