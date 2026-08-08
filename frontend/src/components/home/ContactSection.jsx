@@ -1,26 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { storeInfo } from '../../data/store';
-import { MapPin, Phone, Mail, Clock, ArrowRight, ChevronUp, Send, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowRight, ChevronUp, Sparkles, Award, ShieldCheck, UserCheck } from 'lucide-react';
 import ScrollReveal from '../common/ScrollReveal';
+import contactPersonImg from '../../assets/images/contact-person-enhanced.png';
 import '../../styles/contact.css';
 
 const ContactSection = () => {
   const [showMap, setShowMap] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: 'Product Enquiry',
-    message: ''
-  });
-
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    message: false
-  });
 
   const handleToggleMap = () => {
     const nextState = !showMap;
@@ -34,23 +21,6 @@ const ContactSection = () => {
         }
       }, 150);
     }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {
-      name: !formData.name.trim(),
-      email: !formData.email.trim(),
-      message: !formData.message.trim()
-    };
-
-    setErrors(newErrors);
-
-    if (newErrors.name || newErrors.email || newErrors.message) {
-      return;
-    }
-
-    setSubmitted(true);
   };
 
   return (
@@ -76,7 +46,7 @@ const ContactSection = () => {
           </div>
         </ScrollReveal>
 
-        {/* MAIN 2-COLUMN SECTION: STORE DETAILS | SEND US A MESSAGE */}
+        {/* MAIN 2-COLUMN SECTION: STORE DETAILS | FOUNDER PORTRAIT SHOWCASE */}
         <ScrollReveal variant="slide-up">
           <div className="contact-grid">
             
@@ -157,97 +127,47 @@ const ContactSection = () => {
               </button>
             </div>
 
-            {/* RIGHT COLUMN — SEND MESSAGE FORM */}
-            <div className="send-message-section">
-              <h3 className="section-subheading" style={{ marginBottom: '0.5rem' }}>SEND US A MESSAGE</h3>
-              <p className="form-supporting-text">Have a question? Send us a message and we'll get back to you.</p>
-
-              {submitted ? (
-                <div className="form-success-box">
-                  <CheckCircle2 size={44} color="#198754" style={{ margin: '0 auto' }} />
-                  <h4>MESSAGE RECEIVED</h4>
-                  <p>Thanks! Your message has been received. Our concierge team will reach out shortly.</p>
-                  <button 
-                    type="button" 
-                    className="visit-store-btn"
-                    style={{ width: 'auto', marginTop: 0 }}
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: '', email: '', subject: 'Product Enquiry', message: '' });
-                    }}
-                  >
-                    SEND ANOTHER MESSAGE
-                  </button>
+            {/* RIGHT COLUMN — FOUNDER PORTRAIT SHOWCASE */}
+            <div className="contact-portrait-showcase">
+              <div className="portrait-card">
+                {/* Dark luxury background with golden spotlight */}
+                <div className="portrait-backdrop-glow" />
+                
+                <div className="portrait-image-frame">
+                  <img 
+                    src={contactPersonImg} 
+                    alt="Nikhil - Founder & Owner" 
+                    className="portrait-image"
+                  />
+                  <div className="portrait-vignette" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="contact-form">
-                  
-                  {/* NAME */}
-                  <div className="form-field-group">
-                    <label className="form-label">NAME *</label>
-                    <input 
-                      type="text" 
-                      className="form-input"
-                      placeholder="Enter your name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      style={{ borderColor: errors.name ? '#E63946' : undefined }}
-                    />
-                    {errors.name && <span style={{ fontSize: '0.7rem', color: '#E63946', marginTop: '0.2rem' }}>Name is required.</span>}
+
+                <div className="portrait-content">
+                  <div className="portrait-badge">
+                    <Sparkles size={14} className="text-gold" />
+                    <span>FOUNDER & CREATIVE DIRECTOR</span>
                   </div>
+                  <h3 className="portrait-title">NIKHIL</h3>
+                  <p className="portrait-description">
+                    "Welcome to Nikhil Fashions. Dedicated to bringing you luxury apparel, authentic style, and exceptional personal fashion concierge service."
+                  </p>
 
-                  {/* EMAIL / WHATSAPP */}
-                  <div className="form-field-group">
-                    <label className="form-label">EMAIL / WHATSAPP *</label>
-                    <input 
-                      type="text" 
-                      className="form-input"
-                      placeholder="Enter your email or WhatsApp"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      style={{ borderColor: errors.email ? '#E63946' : undefined }}
-                    />
-                    {errors.email && <span style={{ fontSize: '0.7rem', color: '#E63946', marginTop: '0.2rem' }}>Email or WhatsApp is required.</span>}
+                  <div className="portrait-highlights">
+                    <div className="portrait-highlight-item">
+                      <Award size={18} className="highlight-icon" />
+                      <span>100% Authentic Premium Quality</span>
+                    </div>
+                    <div className="portrait-highlight-item">
+                      <UserCheck size={18} className="highlight-icon" />
+                      <span>Personal Styling Assistance</span>
+                    </div>
+                    <div className="portrait-highlight-item">
+                      <ShieldCheck size={18} className="highlight-icon" />
+                      <span>Verified Client Satisfaction</span>
+                    </div>
                   </div>
-
-                  {/* SUBJECT */}
-                  <div className="form-field-group">
-                    <label className="form-label">SUBJECT</label>
-                    <select 
-                      className="form-input"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    >
-                      <option value="Product Enquiry">Product Enquiry</option>
-                      <option value="Order Support">Order Support</option>
-                      <option value="Product Availability">Product Availability</option>
-                      <option value="Size Enquiry">Size Enquiry</option>
-                      <option value="Store Visit">Store Visit</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-
-                  {/* MESSAGE */}
-                  <div className="form-field-group">
-                    <label className="form-label">MESSAGE *</label>
-                    <textarea 
-                      className="form-textarea"
-                      placeholder="Tell us how we can help..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      style={{ borderColor: errors.message ? '#E63946' : undefined }}
-                    />
-                    {errors.message && <span style={{ fontSize: '0.7rem', color: '#E63946', marginTop: '0.2rem' }}>Message is required.</span>}
-                  </div>
-
-                  {/* SUBMIT BUTTON */}
-                  <button type="submit" className="send-message-btn">
-                    <span>SEND MESSAGE</span>
-                    <ArrowRight size={16} className="btn-arrow-icon" />
-                  </button>
-
-                </form>
-              )}
+                </div>
+              </div>
             </div>
 
           </div>

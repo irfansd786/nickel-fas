@@ -345,8 +345,8 @@
     gap: 3rem;
   }
 
-  .send-message-section {
-    padding: 2rem;
+  .portrait-image-frame {
+    height: 380px;
   }
 
   .bright-map-iframe {
@@ -359,8 +359,7 @@
     padding: 0 16px;
   }
 
-  .visit-store-btn,
-  .send-message-btn {
+  .visit-store-btn {
     width: 100%;
   }
 
@@ -374,4 +373,125 @@
   .bright-map-iframe {
     height: 350px;
   }
+
+  .portrait-image-frame {
+    height: 320px;
+  }
+}
+
+/* ============================================================
+   RIGHT COLUMN — PORTRAIT SHOWCASE
+   ============================================================ */
+.contact-portrait-showcase {
+  width: 100%;
+}
+
+.portrait-card {
+  position: relative;
+  background: #0D0D0D;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  color: #FFFFFF;
+}
+
+.portrait-backdrop-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(35px);
+}
+
+.portrait-image-frame {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portrait-card:hover .portrait-image {
+  transform: scale(1.04);
+}
+
+.portrait-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(13,13,13,0.95) 100%);
+}
+
+.portrait-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.75rem 2rem 2rem 2rem;
+  margin-top: -2rem;
+}
+
+.portrait-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(198, 161, 91, 0.15);
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  border-radius: 50px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #C6A15B;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.portrait-title {
+  font-size: 1.85rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 0.75rem 0;
+}
+
+.portrait-description {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.portrait-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.25rem;
+}
+
+.portrait-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.highlight-icon {
+  color: #C6A15B;
+  flex-shrink: 0;
 }
