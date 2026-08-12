@@ -8,11 +8,12 @@ import imgHero from '../../assets/images/hero-slide-1.jpg';
 
 const StyleGallery = () => {
   const galleryItems = [
-    { id: 1, title: 'URBAN RUNNER', img: imgFootwear },
-    { id: 2, title: 'MINIMAL OUTERWEAR', img: imgClothing },
-    { id: 3, title: 'LUXURY TIMEPIECES', img: imgAccessories },
-    { id: 4, title: 'EDITORIAL LOOKBOOK', img: imgHero }
+    { id: 1, title: 'URBAN RUNNER', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80' },
+    { id: 2, title: 'MINIMAL OUTERWEAR', img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80' },
+    { id: 3, title: 'LUXURY TIMEPIECES', img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80' },
+    { id: 4, title: 'EDITORIAL LOOKBOOK', img: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80' }
   ];
+
 
   return (
     <section className="section-padding">

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="50%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#1A1815"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="rgba(198, 161, 91, 0.18)"/>
+      <stop offset="100%" stop-color="rgba(0, 0, 0, 0)"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Canvas Background -->
+  <rect width="500" height="500" fill="url(#bgGrad)"/>
+  <circle cx="250" cy="230" r="210" fill="url(#glow)"/>
+  
+  <!-- Subtle Grid Lines -->
+  <line x1="0" y1="420" x2="500" y2="420" stroke="rgba(198, 161, 91, 0.1)" stroke-width="1"/>
+  
+  <!-- Main Illustration Shape -->
+  
+      <g transform="translate(120, 130) scale(1.05)">
+        <!-- Body -->
+        <path d="M 70 40 L 40 80 L 70 100 L 70 260 L 230 260 L 230 100 L 260 80 L 230 40 Q 180 70, 150 70 Q 120 70, 70 40 Z" fill="#1E293B" stroke="#fff" stroke-width="1.5"/>
+        <!-- Crewneck collar -->
+        <path d="M 120 48 Q 150 78, 180 48" fill="none" stroke="#C6A15B" stroke-width="6" stroke-linecap="round"/>
+        <!-- Fold / Texture Lines -->
+        <line x1="70" y1="100" x2="230" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+        <path d="M 150 110 L 150 250" stroke="rgba(0,0,0,0.2)" stroke-width="3" stroke-dasharray="6 6"/>
+        <!-- Pocket / Brand Tag -->
+        <rect x="175" y="115" width="30" height="35" rx="2" fill="#C6A15B" stroke="#C6A15B" stroke-width="1"/>
+      </g>
+  
+  <!-- Watermark Category Text -->
+  <text x="250" y="450" text-anchor="middle" fill="#C6A15B" font-size="12" font-weight="900" letter-spacing="4" font-family="system-ui, sans-serif" opacity="0.85">T-SHIRTS • NIKHIL FASHIONS</text>
+  <text x="250" y="475" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="800" letter-spacing="1" font-family="system-ui, sans-serif">PIMA COTTON V-NECK TEE</text>
+  
+  <!-- Gold Badge -->
+  
+  <g transform="translate(30, 30)">
+    <rect width="110" height="28" rx="2" fill="#C6A15B"/>
+    <text x="55" y="18" text-anchor="middle" fill="#0A0A0A" font-size="10" font-weight="900" letter-spacing="1.5" font-family="system-ui, sans-serif">NEW</text>
+  </g>
+</svg>

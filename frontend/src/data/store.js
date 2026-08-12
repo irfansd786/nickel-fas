@@ -3,7 +3,7 @@ const storeInfo = {
   address: "Shop No 1-4-5, Narasimha Rao, Jagannaickpur",
   city: "Kakinada, Andhra Pradesh 533002",
   country: "India",
-  phone: "+91 98480 12345",
+  phone: "+91 98765 12345",
   email: "support@nikhilfashions.com",
   hours: "Monday – Sunday, 10:00 AM – 9:30 PM",
   latitude: 16.9443,

@@ -22,10 +22,11 @@ const NewArrivals = () => {
     colors: []
   });
 
-  // Filter products to show ONLY NEW ARRIVALS (isNew: true or top new drops)
+  // Filter products to show ONLY NEW ARRIVALS (isNew: true)
   const newProductsList = useMemo(() => {
-    return products.filter(p => p.isNew || p.id === 'prod-001' || p.id === 'prod-003' || p.id === 'prod-005' || p.id === 'prod-009' || p.id === 'prod-011');
+    return products.filter(p => p.isNew);
   }, []);
+
 
   // Filtered result
   const filteredProducts = useMemo(() => {

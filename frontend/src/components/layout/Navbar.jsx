@@ -66,6 +66,7 @@ const Navbar = () => {
     { name: 'HOME', path: '/', sectionKey: 'home' },
     { name: 'SHOP ALL', path: '/shop' },
     { name: 'NEW ARRIVALS', path: '/new-arrivals' },
+    { name: 'TRACK ORDER', path: '/track-order' },
     { name: 'ABOUT', path: '/#about', hashSection: 'about', sectionKey: 'about' },
     { name: 'CONTACT US', path: '/#contact', hashSection: 'contact', sectionKey: 'contact' }
   ];
@@ -74,11 +75,13 @@ const Navbar = () => {
     { name: 'HOME', path: '/', sectionKey: 'home' },
     { name: 'SHOP ALL', path: '/shop' },
     { name: 'NEW ARRIVALS', path: '/new-arrivals' },
+    { name: 'TRACK ORDER', path: '/track-order' },
     { name: 'ABOUT', path: '/#about', hashSection: 'about', sectionKey: 'about' },
     { name: 'CONTACT US', path: '/#contact', hashSection: 'contact', sectionKey: 'contact' },
     { name: 'WISHLIST', path: '/wishlist' },
     { name: 'CART', path: '/cart' }
   ];
+
 
   const handleSectionClick = (e, link) => {
     if (link.hashSection) {
@@ -299,9 +302,10 @@ const Navbar = () => {
                 <p style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#C6A15B' }}>
                   CLIENT SUPPORT & INQUIRIES
                 </p>
-                <p className="mobile-contact-info">support@urbanedge-fashion.com</p>
-                <p className="mobile-contact-info">+1 (800) 555-EDGE</p>
+                <p className="mobile-contact-info">support@nikhilfashions.com</p>
+                <p className="mobile-contact-info">+91 98480 12345</p>
               </div>
+
             </motion.div>
           </>
         )}

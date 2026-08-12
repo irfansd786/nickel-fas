@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="50%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#1A1815"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="rgba(198, 161, 91, 0.18)"/>
+      <stop offset="100%" stop-color="rgba(0, 0, 0, 0)"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Canvas Background -->
+  <rect width="500" height="500" fill="url(#bgGrad)"/>
+  <circle cx="250" cy="230" r="210" fill="url(#glow)"/>
+  
+  <!-- Subtle Grid Lines -->
+  <line x1="0" y1="420" x2="500" y2="420" stroke="rgba(198, 161, 91, 0.1)" stroke-width="1"/>
+  
+  <!-- Main Illustration Shape -->
+  
+      <g transform="translate(100, 180) scale(1.1)">
+        <!-- Sole -->
+        <path d="M 20 180 Q 80 195, 180 190 Q 250 185, 290 160 L 290 145 Q 220 165, 160 165 Q 80 165, 20 155 Z" fill="#C6A15B" stroke="#fff" stroke-width="2"/>
+        <path d="M 25 185 L 285 165" stroke="#C6A15B" stroke-width="3" stroke-dasharray="8 6"/>
+        <!-- Upper -->
+        <path d="M 40 155 Q 60 90, 120 70 Q 180 60, 210 110 L 260 120 Q 280 135, 285 155 Z" fill="#1F2937"/>
+        <!-- Overlay & Accent -->
+        <path d="M 90 75 Q 140 120, 240 125" fill="none" stroke="#C6A15B" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 120 100 L 140 70 L 155 75 L 135 105 Z" fill="#C6A15B"/>
+        <!-- Laces -->
+        <line x1="120" y1="80" x2="145" y2="95" stroke="#fff" stroke-width="3"/>
+        <line x1="130" y1="90" x2="155" y2="105" stroke="#fff" stroke-width="3"/>
+        <line x1="140" y1="100" x2="165" y2="115" stroke="#fff" stroke-width="3"/>
+      </g>
+  
+  <!-- Watermark Category Text -->
+  <text x="250" y="450" text-anchor="middle" fill="#C6A15B" font-size="12" font-weight="900" letter-spacing="4" font-family="system-ui, sans-serif" opacity="0.85">SNEAKERS • NIKHIL FASHIONS</text>
+  <text x="250" y="475" text-anchor="middle" fill="#FFFFFF" font-size="16" font-weight="800" letter-spacing="1" font-family="system-ui, sans-serif">KNIT V2 SPEED TRAINER</text>
+  
+  <!-- Gold Badge -->
+  
+</svg>

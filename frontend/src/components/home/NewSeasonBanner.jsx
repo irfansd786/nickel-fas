@@ -10,10 +10,12 @@ import productJacket from '../../assets/images/hero-slide-1.jpg';
 
 const NewSeasonBanner = () => {
   const slides = [
-    { id: 1, name: "CURREN CHRONOGRAPH", category: "SWISS MOVEMENT TIMEPIECE", image: productWatch },
-    { id: 2, name: "URBAN LEATHER MONOLITH", category: "PREMIUM FOOTWEAR", image: productSneakers },
-    { id: 3, name: "STEALTH LEATHER BOMBER", category: "LIMITED OUTERWEAR", image: productJacket }
+    { id: 1, name: "APEX SKELETON AUTOMATIC", category: "SWISS MOVEMENT TIMEPIECE", image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" },
+    { id: 2, name: "APEX STEALTH RUNNER", category: "PREMIUM FOOTWEAR", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" },
+    { id: 3, name: "VANGUARD TAILORED BOMBER", category: "LIMITED OUTERWEAR", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80" }
   ];
+
+
 
   const [activeSlide, setActiveSlide] = useState(0);
 

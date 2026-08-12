@@ -11,6 +11,7 @@ import Category from './pages/Category';
 import ProductDetails from './pages/ProductDetails';
 import Wishlist from './pages/Wishlist';
 import Cart from './pages/Cart';
+import TrackOrder from './pages/TrackOrder';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
@@ -38,6 +39,7 @@ function App() {
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/track-order" element={<TrackOrder />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
@@ -47,5 +49,6 @@ function App() {
     </CartProvider>
   );
 }
+
 
 export default App;

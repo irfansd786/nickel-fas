@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Star, ShoppingBag, Eye } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
+import { useCart } from '../../context/CartContext';
 
 const ProductCard = ({ product, onQuickView }) => {
   const { toggleWishlist, isWishlisted } = useWishlist();
+  const { addToCart } = useCart();
   const [isHovered, setIsHovered] = useState(false);
 
   if (!product) return null;
@@ -37,6 +39,12 @@ const ProductCard = ({ product, onQuickView }) => {
     e.preventDefault();
     e.stopPropagation();
     if (onQuickView) onQuickView(product);
+  };
+
+  const handleAddToCartClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(product, 1);
   };
 
   return (
@@ -73,28 +81,30 @@ const ProductCard = ({ product, onQuickView }) => {
           <Heart size={18} fill={wishlisted ? '#E63946' : 'none'} color={wishlisted ? '#E63946' : '#111111'} />
         </button>
 
-        {/* Quick View Overlays */}
-        <div className="product-quick-add" style={{ display: 'flex', gap: '0.5rem' }}>
+        {/* Quick Add To Cart & Quick View Overlays */}
+        <div className="product-quick-add" style={{ display: 'flex', gap: '0.4rem' }}>
+          <button 
+            type="button" 
+            onClick={handleAddToCartClick} 
+            className="btn-quick-add flex-center gap-1"
+            style={{ flex: 1, backgroundColor: '#C6A15B', color: '#0A0A0A', fontWeight: 800 }}
+          >
+            <ShoppingBag size={14} />
+            <span>ADD TO CART</span>
+          </button>
+          
           <button 
             type="button" 
             onClick={handleQuickViewClick} 
             className="btn-quick-add flex-center gap-1"
-            style={{ flex: 1, backgroundColor: '#1A1A1A' }}
+            style={{ flex: 1, backgroundColor: '#1A1A1A', color: '#FFFFFF' }}
           >
             <Eye size={14} />
             <span>QUICK VIEW</span>
           </button>
-          
-          <Link 
-            to={`/product/${id}`} 
-            className="btn-quick-add flex-center gap-1" 
-            style={{ flex: 1, backgroundColor: '#0A0A0A' }}
-          >
-            <ShoppingBag size={14} />
-            <span>DETAILS</span>
-          </Link>
         </div>
       </div>
+
 
       {/* Product Info - Fixed Layout & Alignment */}
       <div className="product-card-info">

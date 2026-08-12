@@ -99,6 +99,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/track-order" style={{ color: '#CCCCCC', textDecoration: 'none', fontWeight: 700, letterSpacing: '0.05em', transition: 'color 0.2s' }}>
+                  TRACK ORDER
+                </Link>
+              </li>
+              <li>
                 <Link to="/wishlist" style={{ color: '#CCCCCC', textDecoration: 'none', fontWeight: 700, letterSpacing: '0.05em', transition: 'color 0.2s' }}>
                   PROFILE
                 </Link>
@@ -109,6 +114,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+
           </div>
 
           {/* RIGHT COLUMN: STORE LOCATION & DETAILS */}

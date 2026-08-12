@@ -19,12 +19,16 @@ const CATEGORY_CHIPS = [
   { id: 'shoes', name: 'SHOES' },
   { id: 'sandals', name: 'SANDALS' },
   { id: 'chappels', name: 'CHAPPELS' },
+  { id: 'crocs', name: 'CROCS' },
   { id: 't-shirts', name: 'T-SHIRTS' },
   { id: 'shirts', name: 'SHIRTS' },
   { id: 'jeans', name: 'JEANS' },
   { id: 'jackets', name: 'JACKETS' },
+  { id: 'watches', name: 'WATCHES' },
   { id: 'accessories', name: 'ACCESSORIES' }
 ];
+
+
 
 const Category = () => {
   const { category: categoryParam } = useParams();
