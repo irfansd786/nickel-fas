@@ -118,10 +118,10 @@ const FilterSidebar = ({
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
           {[
             { label: 'All Prices', value: 'all' },
-            { label: 'Under $100', value: 'under-100' },
-            { label: '$100 – $200', value: '100-200' },
-            { label: '$200 – $300', value: '200-300' },
-            { label: '$300+', value: '300-plus' }
+            { label: 'Under ₹100', value: 'under-100' },
+            { label: '₹100 – ₹200', value: '100-200' },
+            { label: '₹200 – ₹300', value: '200-300' },
+            { label: '₹300+', value: '300-plus' }
           ].map(p => (
             <label key={p.value} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', cursor: 'pointer' }}>
               <input

@@ -346,7 +346,7 @@ const TrackOrder = () => {
                         </span>
                       </div>
                       <div style={{ textAlign: 'right' }}>
-                        <span style={{ fontSize: '1.15rem', fontWeight: 900, color: '#0A0A0A' }}>${item.price}</span>
+                        <span style={{ fontSize: '1.15rem', fontWeight: 900, color: '#0A0A0A' }}>₹{item.price}</span>
                       </div>
                     </div>
                   ))}

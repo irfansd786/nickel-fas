@@ -167,9 +167,9 @@ const NewArrivals = () => {
                     <div className="filter-options-column">
                       {[
                         { id: 'all', label: 'All Prices' },
-                        { id: 'under-150', label: 'Under $150' },
-                        { id: '150-250', label: '$150 – $250' },
-                        { id: '250-plus', label: '$250+' }
+                        { id: 'under-150', label: 'Under ₹150' },
+                        { id: '150-250', label: '₹150 – ₹250' },
+                        { id: '250-plus', label: '₹250+' }
                       ].map(p => (
                         <label key={p.id} className="filter-checkbox-label">
                           <input 

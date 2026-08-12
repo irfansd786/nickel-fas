@@ -25,14 +25,14 @@ const ProductCard = ({ product, onQuickView }) => {
     isNew
   } = product;
 
-  const primaryImage = images && images.length > 0 ? images[0] : '';
+  const primaryImage = product.selectedImage || (images && images.length > 0 ? images[0] : '');
   const secondaryImage = images && images.length > 1 ? images[1] : primaryImage;
   const wishlisted = isWishlisted(id);
 
   const handleWishlistClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    toggleWishlist(product);
+    toggleWishlist(product, primaryImage);
   };
 
   const handleQuickViewClick = (e) => {
@@ -44,7 +44,7 @@ const ProductCard = ({ product, onQuickView }) => {
   const handleAddToCartClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    addToCart(product, 1);
+    addToCart(product, 1, product.sizes?.[0], product.colors?.[0], primaryImage);
   };
 
   return (
@@ -126,8 +126,8 @@ const ProductCard = ({ product, onQuickView }) => {
         
         {/* Pricing Row */}
         <div className="product-price-row">
-          <span className="product-price">${price}</span>
-          {oldPrice && <span className="product-old-price">${oldPrice}</span>}
+          <span className="product-price">₹{price}</span>
+          {oldPrice && <span className="product-old-price">₹{oldPrice}</span>}
           {discount && !isNew && <span className="product-discount">{discount}</span>}
         </div>
       </div>

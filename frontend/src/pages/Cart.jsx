@@ -70,7 +70,7 @@ const Cart = () => {
                       {/* Product Image */}
                       <Link to={`/product/${item.product.id}`}>
                         <div style={{ width: '110px', height: '140px', backgroundColor: '#F5F5F3', borderRadius: '2px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src={item.product.images[0]} alt={item.product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          <img src={item.selectedImage || item.product.images[0]} alt={item.product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                       </Link>
 
@@ -125,11 +125,11 @@ const Cart = () => {
                       {/* Price Subtotal */}
                       <div style={{ textAlign: 'right', flexShrink: 0 }}>
                         <span style={{ fontSize: '1.15rem', fontWeight: 900, color: '#0A0A0A' }}>
-                          ${item.product.price * item.quantity}
+                          ₹{item.product.price * item.quantity}
                         </span>
                         {item.quantity > 1 && (
                           <span style={{ display: 'block', fontSize: '0.75rem', color: '#777' }}>
-                            ${item.product.price} each
+                            ₹{item.product.price} each
                           </span>
                         )}
                       </div>
@@ -147,7 +147,7 @@ const Cart = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.75rem', fontSize: '0.9rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: '#555' }}>Subtotal</span>
-                    <span style={{ fontWeight: 800 }}>${cartTotal}</span>
+                    <span style={{ fontWeight: 800 }}>₹{cartTotal}</span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -155,20 +155,20 @@ const Cart = () => {
                     {shippingCost === 0 ? (
                       <span style={{ fontWeight: 800, color: '#C6A15B' }}>COMPLIMENTARY</span>
                     ) : (
-                      <span style={{ fontWeight: 800 }}>${shippingCost}</span>
+                      <span style={{ fontWeight: 800 }}>₹{shippingCost}</span>
                     )}
                   </div>
 
                   {shippingCost > 0 && (
                     <p style={{ fontSize: '0.75rem', color: '#777' }}>
-                      Add ${(150 - cartTotal)} more to qualify for complimentary express shipping.
+                      Add ₹{(150 - cartTotal)} more to qualify for complimentary express shipping.
                     </p>
                   )}
                 </div>
 
                 <div style={{ borderTop: '2px solid #0A0A0A', paddingTop: '1.25rem', marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', fontSize: '1.25rem', fontWeight: 900 }}>
                   <span>TOTAL ESTIMATE</span>
-                  <span style={{ color: '#0A0A0A' }}>${estimatedTotal}</span>
+                  <span style={{ color: '#0A0A0A' }}>₹{estimatedTotal}</span>
                 </div>
 
                 <button

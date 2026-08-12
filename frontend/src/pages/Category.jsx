@@ -282,10 +282,10 @@ const Category = () => {
                     <div className="filter-options-column">
                       {[
                         { id: 'all', label: 'All Prices' },
-                        { id: 'under-100', label: 'Under $100' },
-                        { id: '100-200', label: '$100 – $200' },
-                        { id: '200-300', label: '$200 – $300' },
-                        { id: '300-plus', label: '$300+' }
+                        { id: 'under-100', label: 'Under ₹100' },
+                        { id: '100-200', label: '₹100 – ₹200' },
+                        { id: '200-300', label: '₹200 – ₹300' },
+                        { id: '300-plus', label: '₹300+' }
                       ].map(p => (
                         <label key={p.id} className="filter-checkbox-label">
                           <input 

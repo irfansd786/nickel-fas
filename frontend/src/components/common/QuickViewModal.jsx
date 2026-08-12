@@ -51,7 +51,7 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
       return;
     }
     setSizeError(false);
-    addToCart(product, quantity, selectedSize, selectedColor);
+    addToCart(product, quantity, selectedSize, selectedColor, product.images[activeImageIndex] || product.images[0]);
     onClose();
   };
 
@@ -162,8 +162,8 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
-                <span style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0A0A0A' }}>${product.price}</span>
-                {product.oldPrice && <span style={{ textDecoration: 'line-through', color: '#777', fontSize: '1rem' }}>${product.oldPrice}</span>}
+                <span style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0A0A0A' }}>₹{product.price}</span>
+                {product.oldPrice && <span style={{ textDecoration: 'line-through', color: '#777', fontSize: '1rem' }}>₹{product.oldPrice}</span>}
                 {product.discount && <span className="badge-gold">{product.discount}</span>}
               </div>
 
@@ -270,7 +270,7 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
                 </button>
 
                 <button
-                  onClick={() => toggleWishlist(product)}
+                  onClick={() => toggleWishlist(product, product.images[activeImageIndex] || product.images[0])}
                   style={{
                     width: '50px',
                     height: '50px',

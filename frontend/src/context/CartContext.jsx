@@ -13,16 +13,20 @@ export const CartProvider = ({ children }) => {
     }, 3000);
   };
 
-  const addToCart = (product, quantity = 1, selectedSize = null, selectedColor = null) => {
+  const addToCart = (product, quantity = 1, selectedSize = null, selectedColor = null, selectedImage = null) => {
     if (!product) return;
     
     // Check size requirement if product has sizes
     const sizeToUse = selectedSize || (product.sizes && product.sizes.length > 0 ? product.sizes[0] : 'Standard');
     const colorToUse = selectedColor || (product.colors && product.colors.length > 0 ? product.colors[0] : 'Standard');
+    const imageToUse = selectedImage || (product.images && product.images.length > 0 ? product.images[0] : '');
 
     setCartItems(prevItems => {
       const existingIndex = prevItems.findIndex(
-        item => item.product.id === product.id && item.selectedSize === sizeToUse && item.selectedColor === colorToUse
+        item => item.product.id === product.id && 
+                item.selectedSize === sizeToUse && 
+                item.selectedColor === colorToUse &&
+                item.selectedImage === imageToUse
       );
 
       if (existingIndex > -1) {
@@ -31,11 +35,12 @@ export const CartProvider = ({ children }) => {
         return updated;
       } else {
         return [...prevItems, {
-          id: `${product.id}-${sizeToUse}-${colorToUse}`,
+          id: `${product.id}-${sizeToUse}-${colorToUse}-${encodeURIComponent(imageToUse)}`,
           product,
           quantity,
           selectedSize: sizeToUse,
-          selectedColor: colorToUse
+          selectedColor: colorToUse,
+          selectedImage: imageToUse
         }];
       }
     });

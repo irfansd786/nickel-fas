@@ -76,7 +76,7 @@ const ProductDetails = () => {
       return;
     }
     setSizeError(false);
-    addToCart(product, quantity, selectedSize, selectedColor);
+    addToCart(product, quantity, selectedSize, selectedColor, product.images[activeImageIndex] || product.images[0]);
   };
 
   const handleBuyNow = () => {
@@ -85,7 +85,7 @@ const ProductDetails = () => {
       return;
     }
     setSizeError(false);
-    addToCart(product, quantity, selectedSize, selectedColor);
+    addToCart(product, quantity, selectedSize, selectedColor, product.images[activeImageIndex] || product.images[0]);
     navigate('/cart');
   };
 
@@ -177,8 +177,8 @@ const ProductDetails = () => {
 
               {/* Pricing */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.75rem' }}>
-                <span style={{ fontSize: '2rem', fontWeight: 900, color: '#0A0A0A' }}>${product.price}</span>
-                {product.oldPrice && <span style={{ textDecoration: 'line-through', color: '#888', fontSize: '1.25rem' }}>${product.oldPrice}</span>}
+                <span style={{ fontSize: '2rem', fontWeight: 900, color: '#0A0A0A' }}>₹{product.price}</span>
+                {product.oldPrice && <span style={{ textDecoration: 'line-through', color: '#888', fontSize: '1.25rem' }}>₹{product.oldPrice}</span>}
                 {product.discount && <span className="badge-gold">{product.discount}</span>}
               </div>
 
@@ -295,7 +295,7 @@ const ProductDetails = () => {
                 </button>
 
                 <button
-                  onClick={() => toggleWishlist(product)}
+                  onClick={() => toggleWishlist(product, product.images[activeImageIndex] || product.images[0])}
                   style={{
                     width: '54px',
                     height: '54px',
@@ -321,7 +321,7 @@ const ProductDetails = () => {
                   <Truck size={20} color="#C6A15B" />
                   <div>
                     <strong style={{ display: 'block', color: '#0A0A0A' }}>EXPRESS GLOBAL DISPATCH</strong>
-                    <span>Complimentary air courier on all orders over $150.</span>
+                    <span>Complimentary air courier on all orders over ₹1,500.</span>
                   </div>
                 </div>
 

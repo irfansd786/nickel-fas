@@ -145,7 +145,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
                       <h4 style={{ fontSize: '0.9rem', fontWeight: 800, color: '#FFF', textTransform: 'uppercase', margin: '0.25rem 0 0.5rem 0' }}>
                         {p.name}
                       </h4>
-                      <span style={{ fontSize: '0.95rem', fontWeight: 800, color: '#C6A15B' }}>${p.price}</span>
+                      <span style={{ fontSize: '0.95rem', fontWeight: 800, color: '#C6A15B' }}>₹{p.price}</span>
                     </div>
                   </Link>
                 ))}

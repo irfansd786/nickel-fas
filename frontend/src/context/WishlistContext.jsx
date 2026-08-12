@@ -5,14 +5,17 @@ const WishlistContext = createContext();
 export const WishlistProvider = ({ children }) => {
   const [wishlistItems, setWishlistItems] = useState([]);
 
-  const toggleWishlist = (product) => {
+  const toggleWishlist = (product, selectedImage = null) => {
     if (!product) return;
+    const imageToUse = selectedImage || product.selectedImage || (product.images && product.images.length > 0 ? product.images[0] : '');
+    const productWithImage = { ...product, selectedImage: imageToUse };
+
     setWishlistItems(prev => {
       const exists = prev.some(item => item.id === product.id);
       if (exists) {
         return prev.filter(item => item.id !== product.id);
       } else {
-        return [...prev, product];
+        return [...prev, productWithImage];
       }
     });
   };

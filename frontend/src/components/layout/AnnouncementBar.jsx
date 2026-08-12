@@ -26,7 +26,7 @@ const AnnouncementBar = () => {
 
           <div className="announcement-item">
             <Truck size={12} />
-            <span>COMPLIMENTARY EXPRESS SHIPPING OVER $150</span>
+            <span>COMPLIMENTARY EXPRESS SHIPPING OVER ₹1,500</span>
           </div>
         </div>
 

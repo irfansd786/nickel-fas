@@ -99,24 +99,7 @@ export const products = [
     isFeatured: false,
     inStock: true
   },
-  {
-    id: 'prod-005',
-    name: 'Monolith Chunky Platform Sneaker',
-    category: 'footwear',
-    subcategory: 'Sneakers',
-    price: 225,
-    oldPrice: 270,
-    discount: '17% OFF',
-    rating: 4.8,
-    reviews: 31,
-    images: ['https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80'],
-    sizes: ['40', '41', '42', '43', '44'],
-    colors: ['Cream White', 'Onyx Black'],
-    description: 'Architectural exaggerated platform midsole paired with sculpted leather paneling for statement streetwear style.',
-    isNew: true,
-    isFeatured: true,
-    inStock: true
-  },
+
   {
     id: 'prod-006',
     name: 'Urban Suede Street Runner',
@@ -651,24 +634,7 @@ export const products = [
     isFeatured: true,
     inStock: true
   },
-  {
-    id: 'prod-029',
-    name: 'Japanese Selvedge Denim Overshirt',
-    category: 'clothing',
-    subcategory: 'Shirts',
-    price: 175,
-    oldPrice: 210,
-    discount: '16% OFF',
-    rating: 4.9,
-    reviews: 44,
-    images: ['https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80'],
-    sizes: ['S', 'M', 'L', 'XL'],
-    colors: ['Indigo Raw', 'Washed Black'],
-    description: '10.5oz Japanese selvedge denim shirt jacket featuring dual chest flap pockets and mother-of-pearl snap buttons.',
-    isNew: true,
-    isFeatured: true,
-    inStock: true
-  },
+
   {
     id: 'prod-030',
     name: 'Cuban Collar Patterned Silk-Blend Shirt',
@@ -871,24 +837,7 @@ export const products = [
     isFeatured: true,
     inStock: true
   },
-  {
-    id: 'prod-041',
-    name: 'Technical Utility Weather Cargo Jacket',
-    category: 'clothing',
-    subcategory: 'Jackets',
-    price: 310,
-    oldPrice: 370,
-    discount: '16% OFF',
-    rating: 4.8,
-    reviews: 26,
-    images: ['https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&w=800&q=80'],
-    sizes: ['M', 'L', 'XL', 'XXL'],
-    colors: ['Stealth Black', 'Tactical Sage'],
-    description: '3-layer windproof shell coat equipped with 6 utility cargo pockets, packable hood, and sealed seam zips.',
-    isNew: true,
-    isFeatured: false,
-    inStock: true
-  },
+
   {
     id: 'prod-042',
     name: 'Padded Matte Down Puffer Coat',
@@ -907,42 +856,7 @@ export const products = [
     isFeatured: false,
     inStock: true
   },
-  {
-    id: 'prod-043',
-    name: 'Denim Trucker Jacket with Fleece Collar',
-    category: 'clothing',
-    subcategory: 'Jackets',
-    price: 210,
-    oldPrice: 250,
-    discount: '16% OFF',
-    rating: 4.8,
-    reviews: 29,
-    images: ['https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80'],
-    sizes: ['S', 'M', 'L', 'XL'],
-    colors: ['Vintage Wash Denim', 'Black Denim'],
-    description: 'Heavyweight denim jacket featuring soft plush sherpa lining, button flap chest pockets, and waist adjusters.',
-    isNew: true,
-    isFeatured: true,
-    inStock: true
-  },
-  {
-    id: 'prod-044',
-    name: 'Camel Double-Breasted Wool Trench Coat',
-    category: 'clothing',
-    subcategory: 'Jackets',
-    price: 480,
-    oldPrice: 560,
-    discount: '14% OFF',
-    rating: 5.0,
-    reviews: 18,
-    images: ['https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80'],
-    sizes: ['M', 'L', 'XL'],
-    colors: ['Camel Beige', 'Charcoal Wool'],
-    description: 'Tailored Italian wool-blend overcoat with notched lapels, belt waist tie, and horn double-breasted buttons.',
-    isNew: false,
-    isFeatured: false,
-    inStock: true
-  },
+
 
   // ================= WATCHES (8) =================
   {
@@ -1053,42 +967,7 @@ export const products = [
     isFeatured: false,
     inStock: true
   },
-  {
-    id: 'prod-050b',
-    name: 'Royal Executive Gold Chronograph',
-    category: 'watches',
-    subcategory: 'Watches',
-    price: 420,
-    oldPrice: 500,
-    discount: '16% OFF',
-    rating: 4.9,
-    reviews: 35,
-    images: ['https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80'],
-    sizes: ['One Size'],
-    colors: ['Gold / Midnight Black'],
-    description: 'Sophisticated executive dual-subdial chronograph crafted with brushed gold stainless steel case and genuine leather strap.',
-    isNew: true,
-    isFeatured: true,
-    inStock: true
-  },
-  {
-    id: 'prod-050c',
-    name: 'Vanguard Carbon Tourbillon Timepiece',
-    category: 'watches',
-    subcategory: 'Watches',
-    price: 550,
-    oldPrice: 650,
-    discount: '15% OFF',
-    rating: 5.0,
-    reviews: 27,
-    images: ['https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80'],
-    sizes: ['One Size'],
-    colors: ['Forged Carbon / Onyx'],
-    description: 'High-tech forged carbon case with open-work skeletal tourbillon-inspired movement and silicone sports strap.',
-    isNew: true,
-    isFeatured: true,
-    inStock: true
-  },
+
 
   // ================= ACCESSORIES (6) =================
   {
