@@ -230,6 +230,20 @@
   }
   
   .navbar-container {
-    height: 70px;
+    height: 64px;
   }
 }
+
+/* Mobile Bottom Navigation Display Control */
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+}
+

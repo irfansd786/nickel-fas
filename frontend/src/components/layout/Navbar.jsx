@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Heart, ShoppingBag, Menu, X, ChevronRight, Check } from 'lucide-react';
+import { Search, Heart, ShoppingBag, Menu, X, ChevronRight, ChevronDown, Check, Tag } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
 import SearchOverlay from '../common/SearchOverlay';
+import MobileBottomNav from './MobileBottomNav';
+import { categories } from '../../data/categories';
 import '../../styles/navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -70,18 +73,6 @@ const Navbar = () => {
     { name: 'ABOUT', path: '/#about', hashSection: 'about', sectionKey: 'about' },
     { name: 'CONTACT US', path: '/#contact', hashSection: 'contact', sectionKey: 'contact' }
   ];
-
-  const drawerLinks = [
-    { name: 'HOME', path: '/', sectionKey: 'home' },
-    { name: 'SHOP ALL', path: '/shop' },
-    { name: 'NEW ARRIVALS', path: '/new-arrivals' },
-    { name: 'TRACK ORDER', path: '/track-order' },
-    { name: 'ABOUT', path: '/#about', hashSection: 'about', sectionKey: 'about' },
-    { name: 'CONTACT US', path: '/#contact', hashSection: 'contact', sectionKey: 'contact' },
-    { name: 'WISHLIST', path: '/wishlist' },
-    { name: 'CART', path: '/cart' }
-  ];
-
 
   const handleSectionClick = (e, link) => {
     if (link.hashSection) {
@@ -262,40 +253,136 @@ const Navbar = () => {
               </div>
 
               <div className="mobile-nav-links">
-                {drawerLinks.map((link, idx) => {
-                  const isSectionActive = location.pathname === '/' && activeSection === (link.sectionKey || 'home');
-                  return (
-                    <motion.div
-                      key={link.name}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.04 + 0.1 }}
-                    >
-                      {link.hashSection ? (
-                        <a
-                          href={link.path}
-                          onClick={(e) => {
-                            handleSectionClick(e, link);
-                            setMobileMenuOpen(false);
-                          }}
-                          className={`mobile-nav-link ${isSectionActive ? 'active' : ''}`}
-                        >
-                          <span>{link.name}</span>
-                          <ChevronRight size={18} />
-                        </a>
-                      ) : (
-                        <NavLink
-                          to={link.path}
-                          className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
-                          end={link.path === '/'}
-                        >
-                          <span>{link.name}</span>
-                          <ChevronRight size={18} />
-                        </NavLink>
-                      )}
-                    </motion.div>
-                  );
-                })}
+                {/* HOME */}
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => `mobile-nav-link ${isActive && location.pathname === '/' ? 'active' : ''}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  end
+                >
+                  <span>HOME</span>
+                  <ChevronRight size={18} />
+                </NavLink>
+
+                {/* SHOP */}
+                <NavLink
+                  to="/shop"
+                  className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span>SHOP ALL</span>
+                  <ChevronRight size={18} />
+                </NavLink>
+
+                {/* CATEGORIES ACCORDION */}
+                <div>
+                  <button
+                    onClick={() => setCategoriesOpen(!categoriesOpen)}
+                    className="mobile-nav-link"
+                    style={{ width: '100%', justifyContent: 'space-between', background: 'none', border: 'none' }}
+                  >
+                    <span>CATEGORIES</span>
+                    <ChevronDown
+                      size={18}
+                      style={{
+                        transform: categoriesOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.3s ease'
+                      }}
+                    />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {categoriesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        style={{ overflow: 'hidden', paddingLeft: '1.25rem', backgroundColor: 'rgba(255, 255, 255, 0.03)' }}
+                      >
+                        {categories.map((cat) => (
+                          <Link
+                            key={cat.id}
+                            to={`/category/${cat.slug}`}
+                            onClick={() => setMobileMenuOpen(false)}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'space-between',
+                              padding: '0.65rem 0',
+                              color: 'rgba(255, 255, 255, 0.8)',
+                              fontSize: '0.825rem',
+                              fontWeight: 700,
+                              letterSpacing: '0.08em',
+                              borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+                            }}
+                          >
+                            <span>{cat.name}</span>
+                            <ChevronRight size={14} color="#C6A15B" />
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* NEW ARRIVALS */}
+                <NavLink
+                  to="/new-arrivals"
+                  className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span>NEW ARRIVALS</span>
+                  <ChevronRight size={18} />
+                </NavLink>
+
+                {/* OFFERS */}
+                <Link
+                  to="/shop?discount=20"
+                  className="mobile-nav-link"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Tag size={16} color="#C6A15B" />
+                    <span>OFFERS & DROPS</span>
+                  </div>
+                  <ChevronRight size={18} />
+                </Link>
+
+                {/* TRACK ORDER */}
+                <NavLink
+                  to="/track-order"
+                  className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span>TRACK ORDER</span>
+                  <ChevronRight size={18} />
+                </NavLink>
+
+                {/* ABOUT */}
+                <a
+                  href="/#about"
+                  onClick={(e) => {
+                    handleSectionClick(e, { hashSection: 'about', sectionKey: 'about' });
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`mobile-nav-link ${location.pathname === '/' && activeSection === 'about' ? 'active' : ''}`}
+                >
+                  <span>ABOUT US</span>
+                  <ChevronRight size={18} />
+                </a>
+
+                {/* CONTACT */}
+                <a
+                  href="/#contact"
+                  onClick={(e) => {
+                    handleSectionClick(e, { hashSection: 'contact', sectionKey: 'contact' });
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`mobile-nav-link ${location.pathname === '/' && activeSection === 'contact' ? 'active' : ''}`}
+                >
+                  <span>CONTACT US</span>
+                  <ChevronRight size={18} />
+                </a>
               </div>
 
               <div className="mobile-drawer-footer">
@@ -310,8 +397,12 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
+
+      {/* Fixed Mobile Bottom Navigation Bar */}
+      <MobileBottomNav onOpenSearch={() => setSearchOpen(true)} />
     </>
   );
 };
 
 export default Navbar;
+

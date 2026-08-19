@@ -1,39 +1,63 @@
 /* ============================================================
-   RESPONSIVE BREAKPOINTS & MOBILE OPTIMIZATIONS
+   NIKHIL FASHIONS — FLUID RESPONSIVE DESIGN SYSTEM (ALL BREAKPOINTS)
    ============================================================ */
 
-/* Large Desktop (1440px) */
-@media (max-width: 1440px) {
+/* ------------------------------------------------------------
+   1. ULTRAWIDE & LARGE DESKTOP (1920px – 2560px+)
+   ------------------------------------------------------------ */
+@media (min-width: 1920px) {
   :root {
-    --container-width: 1280px;
+    --container-width: 1600px;
+  }
+
+  .trending-grid,
+  .shop-product-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+
+  .hero-content {
+    max-width: 680px;
   }
 }
 
-/* Desktop (1200px) */
-@media (max-width: 1200px) {
+/* ------------------------------------------------------------
+   2. MACBOOK & LARGE LAPTOPS (1440px – 1919px)
+   ------------------------------------------------------------ */
+@media (max-width: 1919px) and (min-width: 1440px) {
   :root {
-    --container-width: 1040px;
-    --container-padding: 1.5rem;
+    --container-width: 1400px;
   }
 
-  .trending-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .hero-heading {
-    font-size: 4.25rem;
+  .trending-grid,
+  .shop-product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.75rem;
   }
 }
 
-/* Medium / Tablet (992px - 1024px) */
-@media (max-width: 992px) {
+/* ------------------------------------------------------------
+   3. LAPTOPS & SMALL DESKTOPS (1280px – 1439px)
+   ------------------------------------------------------------ */
+@media (max-width: 1439px) and (min-width: 1025px) {
   :root {
-    --container-width: 100%;
+    --container-width: 1240px;
   }
 
+  .trending-grid,
+  .shop-product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. TABLETS & SMALL LAPTOPS (768px – 1024px)
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
   .section-padding {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .hero-section {
@@ -41,163 +65,265 @@
   }
 
   .hero-heading {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5.5vw, 3.5rem);
   }
 
   .category-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
 
-  .trending-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .trending-grid,
+  .shop-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 
   .essentials-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
-  .hero-grid-layout {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .hero-rotator-wrapper {
-    max-width: 420px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-stats {
-    gap: 2rem;
-    margin-top: 3rem;
+  .footer-grid-wrapper {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2.5rem !important;
   }
 }
 
-/* Mobile Devices (768px) */
-@media (max-width: 768px) {
+/* ------------------------------------------------------------
+   5. MOBILE & LARGE PHONES (431px – 767px)
+   ------------------------------------------------------------ */
+@media (max-width: 767px) {
   .section-title-wrapper {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
   }
 
   .section-main-heading {
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
   }
 
   .hero-section {
-    min-height: 70vh;
+    min-height: 80vh;
+    padding-bottom: calc(var(--mobile-bottom-nav-height, 64px) + 1rem);
   }
 
   .hero-container {
-    padding: 2.5rem 1.25rem;
+    padding: 2rem 1rem;
   }
 
   .hero-heading {
-    font-size: 2.75rem;
-    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    margin-bottom: 1rem;
   }
 
   .hero-description {
     font-size: 0.95rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+    max-width: 100%;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
+    gap: 0.85rem;
   }
 
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
   }
 
+  .hero-slide-nav {
+    bottom: calc(var(--mobile-bottom-nav-height, 64px) + 1.25rem);
+    right: 1rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-stat-number {
+    font-size: 1.3rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.6rem;
+  }
+
+  /* 2x2 Category Grid on Mobile as per spec */
   .category-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .trending-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .new-season-banner {
-    padding: 3.5rem 1.25rem;
-    margin: 2rem 0;
-  }
-
-  .shop-toolbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .shop-toolbar > div {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-/* Small Mobile Devices (576px - 600px) */
-@media (max-width: 576px) {
-  .trending-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.85rem;
   }
 
-  .hero-heading {
-    font-size: 2.25rem;
+  .category-card-overlay {
+    padding: 1.25rem;
   }
 
-  .hero-stats {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .category-card-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
   }
 
-  .hero-stat-number {
-    font-size: 1.35rem;
+  .category-card-sublabel {
+    font-size: 0.65rem;
+    margin-bottom: 0.25rem;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Extra Small Mobile (375px - 480px) */
-@media (max-width: 480px) {
-  :root {
-    --container-padding: 1rem;
+  /* 2 Column Product Grid on Mobile */
+  .trending-grid,
+  .shop-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
   }
 
-  .hero-heading {
-    font-size: 2rem;
+  .product-card-info {
+    padding: 0.75rem;
   }
 
-  .btn {
-    padding: 0.9rem 1.25rem;
+  .product-title {
+    font-size: 0.825rem;
+    height: 2.2rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+  }
+
+  .product-old-price {
     font-size: 0.75rem;
   }
 
-  .trending-grid {
-    grid-template-columns: 1fr;
+  /* Always show touch quick-add overlay on mobile */
+  .product-quick-add {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+    padding: 0.4rem;
+  }
+
+  .btn-quick-add {
+    padding: 0.45rem;
+    font-size: 0.65rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .new-season-banner {
+    padding: 3rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .new-season-heading {
+    font-size: 1.85rem;
+  }
+
+  .footer-grid-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  /* Mobile Detail Layout adjustments */
+  .product-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
   }
 }
 
-/* Ultra Small (320px) */
-@media (max-width: 320px) {
+/* ------------------------------------------------------------
+   6. SMALL & VERY SMALL PHONES (320px – 430px)
+   ------------------------------------------------------------ */
+@media (max-width: 430px) {
+  :root {
+    --container-padding: 0.85rem;
+  }
+
   .hero-heading {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .hero-stat-number {
+    font-size: 1.1rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+  }
+
+  .trending-grid,
+  .shop-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .product-card-info {
+    padding: 0.6rem;
+  }
+
+  .product-title {
+    font-size: 0.78rem;
+    height: 2.1rem;
+  }
+
+  .badge-gold, .badge-dark {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .btn {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.75rem;
   }
 
   .brand-logo {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   7. ULTRA SMALL PHONES (320px – 374px)
+   ------------------------------------------------------------ */
+@media (max-width: 374px) {
+  .hero-heading {
+    font-size: 1.65rem;
+  }
+
+  .product-price {
+    font-size: 0.85rem;
+  }
+
+  .product-rating-count {
+    display: none;
+  }
+
+  .product-quick-add button span {
+    display: none;
+  }
+
+  .product-quick-add button {
+    justify-content: center;
+    padding: 0.5rem;
   }
 }

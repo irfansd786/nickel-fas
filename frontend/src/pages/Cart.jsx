@@ -47,7 +47,7 @@ const Cart = () => {
           </div>
 
           {cartItems.length > 0 ? (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(1.5rem, 3vw, 3.5rem)', alignItems: 'start' }}>
               
               {/* Cart Items Column */}
               <div>
@@ -60,9 +60,10 @@ const Cart = () => {
                       transition={{ duration: 0.3 }}
                       style={{
                         display: 'flex',
-                        gap: '1.5rem',
-                        paddingBottom: '2rem',
-                        marginBottom: '2rem',
+                        flexWrap: 'wrap',
+                        gap: '1.25rem',
+                        paddingBottom: '1.5rem',
+                        marginBottom: '1.5rem',
                         borderBottom: '1px solid #E5E5E5',
                         alignItems: 'center'
                       }}

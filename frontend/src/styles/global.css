@@ -23,6 +23,21 @@ body {
   overflow-x: hidden;
 }
 
+/* Page wrapper offset for fixed mobile bottom nav */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: clip;
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding-bottom: calc(var(--mobile-bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* Custom Text Selection */
 ::selection {
   background-color: var(--color-black);
@@ -41,6 +56,8 @@ button {
   font-family: inherit;
   cursor: pointer;
   outline: none;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 img, video {
@@ -61,17 +78,14 @@ input, textarea, select {
 
 /* Base Layout Helpers */
 .container {
-  width: 100%;
-  max-width: var(--container-width);
+  width: min(100% - (var(--container-padding) * 2), var(--container-width));
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
 }
 
 .section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: clamp(2.5rem, 6vw, 5rem);
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
 }
 
 .flex-center {
@@ -86,10 +100,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
   line-height: 1.1;
   text-transform: uppercase;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .eyebrow {
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -100,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .subheading {
   color: var(--color-gray);
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   line-height: 1.6;
   font-weight: 400;
 }
@@ -115,6 +131,8 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   padding: 0.25rem 0.6rem;
   border-radius: var(--radius-xs);
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .badge-dark {
@@ -126,4 +144,17 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   padding: 0.25rem 0.6rem;
   border-radius: var(--radius-xs);
+  display: inline-block;
+  white-space: nowrap;
 }
+
+/* Accessibility: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
