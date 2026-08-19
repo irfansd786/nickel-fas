@@ -31,6 +31,7 @@ const NewSeasonBanner = () => {
     <section className="container" style={{ margin: '4rem auto' }}>
       <ScrollReveal variant="fade">
         <div 
+          className="new-season-banner-card"
           style={{
             position: 'relative',
             backgroundColor: '#090909',
@@ -64,6 +65,7 @@ const NewSeasonBanner = () => {
 
           {/* Main Top Banner Content Grid */}
           <div 
+            className="new-season-grid"
             style={{
               position: 'relative',
               zIndex: 2,
@@ -237,6 +239,7 @@ const NewSeasonBanner = () => {
 
           {/* Bottom Features Bar */}
           <div 
+            className="new-season-features"
             style={{
               position: 'relative',
               zIndex: 2,

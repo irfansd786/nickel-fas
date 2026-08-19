@@ -367,9 +367,65 @@ const ProductDetails = () => {
         </div>
       </main>
 
+      {/* Mobile Sticky Purchase Bar */}
+      <div 
+        className="mobile-sticky-purchase-bar"
+        style={{
+          position: 'fixed',
+          bottom: 'calc(var(--mobile-bottom-nav-height, 64px) + env(safe-area-inset-bottom, 0px))',
+          left: 0,
+          right: 0,
+          backgroundColor: '#FFFFFF',
+          borderTop: '1px solid #E5E5E5',
+          padding: '0.65rem 1rem',
+          boxShadow: '0 -4px 15px rgba(0,0,0,0.08)',
+          zIndex: 900,
+          display: 'none'
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', maxWidth: '500px', margin: '0 auto' }}>
+          <button
+            onClick={() => toggleWishlist(product, product.images[activeImageIndex] || product.images[0])}
+            style={{
+              width: '44px',
+              height: '44px',
+              border: '1px solid #E5E5E5',
+              borderRadius: '2px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: wishlisted ? '#0A0A0A' : '#FFF',
+              color: wishlisted ? '#E63946' : '#0A0A0A',
+              flexShrink: 0
+            }}
+            aria-label="Wishlist"
+          >
+            <Heart size={20} fill={wishlisted ? '#E63946' : 'none'} />
+          </button>
+
+          <button
+            onClick={handleAddToCart}
+            className="btn btn-primary"
+            style={{ flex: 1, height: '44px', fontSize: '0.75rem', padding: 0 }}
+          >
+            <ShoppingBag size={16} />
+            <span>ADD TO CART</span>
+          </button>
+
+          <button
+            onClick={handleBuyNow}
+            className="btn btn-secondary"
+            style={{ flex: 1, height: '44px', fontSize: '0.75rem', padding: 0, backgroundColor: '#C6A15B', color: '#FFF', borderColor: '#C6A15B' }}
+          >
+            BUY NOW
+          </button>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
 };
 
 export default ProductDetails;
+
